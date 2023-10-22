@@ -148,3 +148,21 @@ def test_make_fitted_exp_values_complex():
     y = f.make_fitted_exp_values(x, a, b, c)
     for i in range(len(x)):
         assert y[i] == a*math.exp(x[i]*b)+c
+
+def customFunction(x, a, b, c, d):
+    y = math.sin(x/a)
+    y = y * math.sin(x*b)
+    y = y - c*x
+    y = y + math.fabs(x)**d
+    return y
+
+def test_make_fitted_function_values():
+    x = np.linspace(-10, 10, 30)
+    a = 1.5
+    b = -2.3
+    c = 0.2
+    d = 0.5
+    parameters = [a, b, c, d]
+    y = f.make_fitted_function_values(x, parameters, customFunction)
+    for i in range(len(x)):
+        assert y[i] == math.sin(x[i]/a)*math.sin(x[i]*b)-c*x[i]+math.fabs(x[i])**d
