@@ -39,7 +39,7 @@ def make_fitted_cos_values(x: dtypes.realArray, a: dtypes.numeric, b: dtypes.rea
     
     return yFit
 
-def make_fitted_ln_values(x: dtypes.numericArray, a: dtypes.numeric, b: dtypes.numeric):
+def make_fitted_ln_values(x: dtypes.realArray, a: dtypes.numeric, b: dtypes.numeric):
     """This returns a list of all y values for the passed x-values calculated with with a*ln(x)+b
      
     numeric is int, float or complex, numericArray is a list of numeric"""
