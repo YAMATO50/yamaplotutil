@@ -112,3 +112,24 @@ def test_fit_exp_complex():
         c = randComplex(__globalMin, __globalMax)
         x = randFloat(__globalMin, __globalMax)
         assert ff.fit_exp(x, a, b, c) == a*math.exp(x*b)+c
+
+def test_fit_ln_int():
+    for _ in range(__testRuns):
+        a = randInt(__globalMin, __globalMax)
+        b = randInt(__globalMin, __globalMax)
+        x = randInt(1, __globalMax)
+        assert ff.fit_ln(x, a, b) == a*math.log(x)+b
+
+def test_fit_ln_Float():
+    for _ in range(__testRuns):
+        a = randFloat(__globalMin, __globalMax)
+        b = randFloat(__globalMin, __globalMax)
+        x = randFloat(0.001, __globalMax)
+        assert ff.fit_ln(x, a, b) == a*math.log(x)+b
+
+def test_fit_ln_Complex():
+    for _ in range(__testRuns):
+        a = randComplex(__globalMin, __globalMax)
+        b = randComplex(__globalMin, __globalMax)
+        x = randFloat(0.001, __globalMax)
+        assert ff.fit_ln(x, a, b) == a*math.log(x)+b
