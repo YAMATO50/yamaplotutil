@@ -13,7 +13,6 @@ def make_fitted_polynom_values(x: dtypes.numericArray, coefficients: dtypes.nume
         y = 0.0
         for coeff in range(len(coefficients)):
             y = y + coefficients[coeff] * x[_x]**deg
-            print(y, deg)
             deg -= 1
         yFit.append(y)
     return yFit
