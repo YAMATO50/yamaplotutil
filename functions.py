@@ -20,7 +20,7 @@ def make_fitted_polynom_values(x: dtypes.numericArray, coefficients: dtypes.nume
 def make_fitted_sin_values(x: dtypes.realArray, a: dtypes.numeric, b: dtypes.real, c: dtypes.real, d: dtypes.numeric):
     """This returns a list of all y values for the passed x-values calculated with with a*sin(b*x+c)+d
      
-    numeric is int, float or complex, numericArray is a list of numeric"""
+    numeric is int, float or complex; numericArray is a list of numeric; real is int or float; realArray is a list of real"""
     yFit: dtypes.numericArray = []
 
     for _x in x:
@@ -31,7 +31,7 @@ def make_fitted_sin_values(x: dtypes.realArray, a: dtypes.numeric, b: dtypes.rea
 def make_fitted_cos_values(x: dtypes.realArray, a: dtypes.numeric, b: dtypes.real, c: dtypes.real, d: dtypes.numeric):
     """This returns a list of all y values for the passed x-values calculated with with a*cos(b*x+c)+d
      
-    numeric is int, float or complex, numericArray is a list of numeric"""
+    numeric is int, float or complex; numericArray is a list of numeric; real is int or float; realArray is a list of real"""
     yFit: dtypes.numericArray = []
 
     for _x in x:
@@ -42,7 +42,7 @@ def make_fitted_cos_values(x: dtypes.realArray, a: dtypes.numeric, b: dtypes.rea
 def make_fitted_ln_values(x: dtypes.realArray, a: dtypes.numeric, b: dtypes.numeric):
     """This returns a list of all y values for the passed x-values calculated with with a*ln(x)+b
      
-    numeric is int, float or complex, numericArray is a list of numeric"""
+    numeric is int, float or complex; numericArray is a list of numeric; real is int or float; realArray is a list of real"""
     yFit: dtypes.numericArray = []
     for _x in x:
         yFit.append(a*math.log(_x) + b)
@@ -51,7 +51,7 @@ def make_fitted_ln_values(x: dtypes.realArray, a: dtypes.numeric, b: dtypes.nume
 def make_fitted_exp_values(x: dtypes.realArray, a: dtypes.numeric, b: dtypes.real, c: dtypes.numeric):
     """This returns a list of all y values for the passed x-values calculated with with a*exp(x*b)+c
      
-    numeric is int, float or complex, numericArray is a list of numeric"""
+    numeric is int, float or complex; numericArray is a list of numeric; real is int or float; realArray is a list of real"""
     yFit: dtypes.numericArray = []
     for _x in x:
         yFit.append(a*math.exp(_x*b)+c)
