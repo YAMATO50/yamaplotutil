@@ -97,3 +97,27 @@ def test_make_fitted_cos_values_complex():
     y = f.make_fitted_cos_values(x, a, b, c, d)
     for i in range(len(x)):
         assert y[i] == a*math.cos(b*x[i]+c)+d
+
+def test_make_fitted_ln_values_int():
+    x = np.linspace(1, 10, 9, dtype=int)
+    a = 3
+    b = -4
+    y = f.make_fitted_ln_values(x, a, b)
+    for i in range(len(x)):
+        assert y[i] == a*math.log(x[i])+b
+
+def test_make_fitted_ln_values_float():
+    x = np.linspace(0.001, 10, 20, dtype=float)
+    a = 3.3
+    b = -4.2
+    y = f.make_fitted_ln_values(x, a, b)
+    for i in range(len(x)):
+        assert y[i] == a*math.log(x[i])+b
+
+def test_make_fitted_ln_values_complex():
+    x = np.linspace(0.001, 10, 20, dtype=float)
+    a = 3.3+4.2j
+    b = -4.2-2.3j
+    y = f.make_fitted_ln_values(x, a, b)
+    for i in range(len(x)):
+        assert y[i] == a*math.log(x[i])+b
