@@ -28,17 +28,17 @@ def fit_exp(x: dtypes.real, a: dtypes.numeric, b: dtypes.real, c: dtypes.numeric
 def fit_ln(x: dtypes.real, a: dtypes.numeric, b: dtypes.numeric):
     """This returns the result of a*ln(x)+b and can be used as a function for fitting
      
-    numeric is int, float or complex"""
+    numeric is int, float or complex; real is int or float"""
     return a*math.log(x)+b
 
 def fit_sin(x: dtypes.real, a: dtypes.numeric, b: dtypes.real, c: dtypes.real, d: dtypes.numeric):
     """This returns the result of a*sin(b*x+c)+d and can be used as a function for fitting
      
-    numeric is int, float or complex"""
+    numeric is int, float or complex; real is int or float"""
     return a*math.sin(b*x+c)+d
 
 def fit_cos(x: dtypes.real, a: dtypes.numeric, b: dtypes.real, c: dtypes.real, d: dtypes.numeric):
     """This returns the result of a*cos(b*x+c)+d and can be used as a function for fitting
      
-    numeric is int, float or complex"""
+    numeric is int, float or complex; real is int or float"""
     return a*math.cos(b*x+c)+d
