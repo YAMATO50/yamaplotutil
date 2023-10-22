@@ -54,7 +54,7 @@ def make_fitted_exp_values(x: dtypes.numericArray, a: dtypes.numeric, b: dtypes.
     numeric is int, float or complex, numericArray is a list of numeric"""
     yFit: dtypes.numericArray = []
     for _x in x:
-        yFit.append(a*math.exp(x*b)+c)
+        yFit.append(a*math.exp(_x*b)+c)
     return yFit
 
 def make_fitted_function_values(x, parameters, f):
