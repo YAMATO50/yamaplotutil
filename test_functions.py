@@ -121,3 +121,30 @@ def test_make_fitted_ln_values_complex():
     y = f.make_fitted_ln_values(x, a, b)
     for i in range(len(x)):
         assert y[i] == a*math.log(x[i])+b
+
+def test_make_fitted_exp_values_int():
+    x = np.linspace(-10, 10, 20, dtype=int)
+    a = -3
+    b = 12
+    c = 6
+    y = f.make_fitted_exp_values(x, a, b, c)
+    for i in range(len(x)):
+        assert y[i] == a*math.exp(x[i]*b)+c
+
+def test_make_fitted_exp_values_float():
+    x = np.linspace(-10, 10, 30, dtype=float)
+    a = -3.2
+    b = 0.45
+    c = 1.34
+    y = f.make_fitted_exp_values(x, a, b, c)
+    for i in range(len(x)):
+        assert y[i] == a*math.exp(x[i]*b)+c
+
+def test_make_fitted_exp_values_complex():
+    x = np.linspace(-10, 10, 30, dtype=float)
+    a = -3.2+5j
+    b = 12.45
+    c = 0+2.3j
+    y = f.make_fitted_exp_values(x, a, b, c)
+    for i in range(len(x)):
+        assert y[i] == a*math.exp(x[i]*b)+c
