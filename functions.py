@@ -48,7 +48,7 @@ def make_fitted_ln_values(x: dtypes.realArray, a: dtypes.numeric, b: dtypes.nume
         yFit.append(a*math.log(_x) + b)
     return yFit
 
-def make_fitted_exp_values(x: dtypes.numericArray, a: dtypes.numeric, b: dtypes.numeric, c: dtypes.numeric):
+def make_fitted_exp_values(x: dtypes.realArray, a: dtypes.numeric, b: dtypes.real, c: dtypes.numeric):
     """This returns a list of all y values for the passed x-values calculated with with a*exp(x*b)+c
      
     numeric is int, float or complex, numericArray is a list of numeric"""
