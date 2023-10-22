@@ -31,13 +31,13 @@ def fit_ln(x: dtypes.real, a: dtypes.numeric, b: dtypes.numeric):
     numeric is int, float or complex"""
     return a*math.log(x)+b
 
-def fit_sin(x: dtypes.numeric, a: dtypes.numeric, b: dtypes.numeric, c: dtypes.numeric, d: dtypes.numeric):
+def fit_sin(x: dtypes.real, a: dtypes.numeric, b: dtypes.real, c: dtypes.real, d: dtypes.numeric):
     """This returns the result of a*sin(b*x+c)+d and can be used as a function for fitting
      
     numeric is int, float or complex"""
     return a*math.sin(b*x+c)+d
 
-def fit_cos(x: dtypes.numeric, a: dtypes.numeric, b: dtypes.numeric, c: dtypes.numeric, d: dtypes.numeric):
+def fit_cos(x: dtypes.real, a: dtypes.numeric, b: dtypes.real, c: dtypes.real, d: dtypes.numeric):
     """This returns the result of a*cos(b*x+c)+d and can be used as a function for fitting
      
     numeric is int, float or complex"""
