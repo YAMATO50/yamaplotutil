@@ -25,7 +25,7 @@ def fit_exp(x: dtypes.real, a: dtypes.numeric, b: dtypes.real, c: dtypes.numeric
     numeric is int, float or complex; real is int or float"""
     return a*math.exp(x*b)+c
 
-def fit_ln(x: dtypes.numeric, a: dtypes.numeric, b: dtypes.numeric):
+def fit_ln(x: dtypes.real, a: dtypes.numeric, b: dtypes.numeric):
     """This returns the result of a*ln(x)+b and can be used as a function for fitting
      
     numeric is int, float or complex"""
