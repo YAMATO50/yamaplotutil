@@ -160,3 +160,30 @@ def test_fit_sin_complex():
         d = randComplex(__globalMin, __globalMax)
         x = randFloat(__globalMin, __globalMax)
         assert ff.fit_sin(x, a, b, c, d) == a*math.sin(b*x+c)+d
+
+def test_fit_cos_int():
+    for _ in range(__testRuns):
+        a = randInt(__globalMin, __globalMax)
+        b = randInt(__globalMin, __globalMax)
+        c = randInt(__globalMin, __globalMax)
+        d = randInt(__globalMin, __globalMax)
+        x = randInt(__globalMin, __globalMax)
+        assert ff.fit_cos(x, a, b, c, d) == a*math.cos(b*x+c)+d
+
+def test_fit_cos_float():
+    for _ in range(__testRuns):
+        a = randFloat(__globalMin, __globalMax)
+        b = randFloat(__globalMin, __globalMax)
+        c = randFloat(__globalMin, __globalMax)
+        d = randFloat(__globalMin, __globalMax)
+        x = randFloat(__globalMin, __globalMax)
+        assert ff.fit_cos(x, a, b, c, d) == a*math.cos(b*x+c)+d
+
+def test_fit_cos_complex():
+    for _ in range(__testRuns):
+        a = randComplex(__globalMin, __globalMax)
+        b = randFloat(__globalMin, __globalMax)
+        c = randFloat(__globalMin, __globalMax)
+        d = randComplex(__globalMin, __globalMax)
+        x = randFloat(__globalMin, __globalMax)
+        assert ff.fit_cos(x, a, b, c, d) == a*math.cos(b*x+c)+d
