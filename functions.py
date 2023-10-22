@@ -17,7 +17,7 @@ def make_fitted_polynom_values(x: dtypes.numericArray, coefficients: dtypes.nume
         yFit.append(y)
     return yFit
 
-def make_fitted_sin_values(x: dtypes.numericArray, a: dtypes.numeric, b: dtypes.numeric, c: dtypes.numeric, d: dtypes.numeric):
+def make_fitted_sin_values(x: dtypes.realArray, a: dtypes.numeric, b: dtypes.real, c: dtypes.real, d: dtypes.numeric):
     """This returns a list of all y values for the passed x-values calculated with with a*sin(b*x+c)+d
      
     numeric is int, float or complex, numericArray is a list of numeric"""
@@ -28,7 +28,7 @@ def make_fitted_sin_values(x: dtypes.numericArray, a: dtypes.numeric, b: dtypes.
     
     return yFit
 
-def make_fitted_cos_values(x: dtypes.numericArray, a: dtypes.numeric, b: dtypes.numeric, c: dtypes.numeric, d: dtypes.numeric):
+def make_fitted_cos_values(x: dtypes.realArray, a: dtypes.numeric, b: dtypes.real, c: dtypes.real, d: dtypes.numeric):
     """This returns a list of all y values for the passed x-values calculated with with a*cos(b*x+c)+d
      
     numeric is int, float or complex, numericArray is a list of numeric"""
