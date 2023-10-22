@@ -1,5 +1,6 @@
 import fitfunctions as ff
 import random
+import math
 
 __testRuns = 10
 __globalMin = -10
@@ -87,3 +88,27 @@ def test_fit_cube_complex():
         d = randComplex(__globalMin, __globalMax)
         x = randComplex(__globalMin, __globalMax)
         assert ff.fit_cube(x, a, b, c, d) == a*x**3+b*x**2+c*x+d
+
+def test_fit_exp_int():
+    for _ in range(__testRuns):
+        a = randInt(__globalMin, __globalMax)
+        b = randInt(__globalMin, __globalMax)
+        c = randInt(__globalMin, __globalMax)
+        x = randInt(__globalMin, __globalMax)
+        assert ff.fit_exp(x, a, b, c) == a*math.exp(x*b)+c
+
+def test_fit_exp_float():
+    for _ in range(__testRuns):
+        a = randFloat(__globalMin, __globalMax)
+        b = randFloat(__globalMin, __globalMax)
+        c = randFloat(__globalMin, __globalMax)
+        x = randFloat(__globalMin, __globalMax)
+        assert ff.fit_exp(x, a, b, c) == a*math.exp(x*b)+c
+
+def test_fit_exp_complex():
+    for _ in range(__testRuns):
+        a = randComplex(__globalMin, __globalMax)
+        b = randFloat(__globalMin, __globalMax)
+        c = randComplex(__globalMin, __globalMax)
+        x = randFloat(__globalMin, __globalMax)
+        assert ff.fit_exp(x, a, b, c) == a*math.exp(x*b)+c
