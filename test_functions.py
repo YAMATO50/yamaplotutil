@@ -1,4 +1,4 @@
-import functions as f
+from yamaplotutil import functions as f
 import numpy as np
 import math
 

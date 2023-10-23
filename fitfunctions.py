@@ -1,4 +1,4 @@
-import dtypes
+from yamaplotutil import dtypes
 import math
 
 def fit_lin(x: dtypes.numeric, m: dtypes.numeric, b: dtypes.numeric):

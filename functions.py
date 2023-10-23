@@ -1,5 +1,5 @@
 import math
-import dtypes
+from yamaplotutil import dtypes
 
 def make_fitted_polynom_values(x: dtypes.numericArray, coefficients: dtypes.numericArray):
     """This returns a list of all y values for the passed x-values calculated with with a*x**(n)+b*x**(n-1)+...+z, where n is the degree of the polynom and

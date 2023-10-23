@@ -1,4 +1,4 @@
-import fitfunctions as ff
+from yamaplotutil import fitfunctions as ff
 import random
 import math
 
