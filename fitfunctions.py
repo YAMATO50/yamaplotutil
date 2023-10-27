@@ -52,8 +52,13 @@ def fit_sin(x: dtypes.real | dtypes.realArray, a: dtypes.numeric, b: dtypes.real
             return result
     return a*math.sin(b*x+c)+d
 
-def fit_cos(x: dtypes.real, a: dtypes.numeric, b: dtypes.real, c: dtypes.real, d: dtypes.numeric):
+def fit_cos(x: dtypes.real | dtypes.realArray, a: dtypes.numeric, b: dtypes.real, c: dtypes.real, d: dtypes.numeric):
     """This returns the result of a*cos(b*x+c)+d and can be used as a function for fitting
      
     numeric is int, float or complex; real is int or float"""
+    if type(x) == list:
+        result = []
+        for _x in x:
+            result.append(a*math.cos(b*_x+c)+d)
+            return result
     return a*math.cos(b*x+c)+d
