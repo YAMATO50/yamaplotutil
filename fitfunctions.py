@@ -26,7 +26,7 @@ def fit_exp(x: dtypes.real|dtypes.realArray, a: dtypes.numeric, b: dtypes.real, 
     if type(x) == list:
         result = []
         for _x in x:
-           result.append(a*math.exp(x*b)+c)
+           result.append(a*math.exp(_x*b)+c)
            return result 
     return a*math.exp(x*b)+c
 
