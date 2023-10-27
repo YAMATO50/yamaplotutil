@@ -30,10 +30,15 @@ def fit_exp(x: dtypes.real|dtypes.realArray, a: dtypes.numeric, b: dtypes.real, 
            return result 
     return a*math.exp(x*b)+c
 
-def fit_ln(x: dtypes.real, a: dtypes.numeric, b: dtypes.numeric):
+def fit_ln(x: dtypes.real|dtypes.realArray, a: dtypes.numeric, b: dtypes.numeric):
     """This returns the result of a*ln(x)+b and can be used as a function for fitting
      
     numeric is int, float or complex; real is int or float"""
+    if type(x) == list:
+        result = []
+        for _x in x:
+            result.append(a*math.log(_x)+b)
+            return result
     return a*math.log(x)+b
 
 def fit_sin(x: dtypes.real, a: dtypes.numeric, b: dtypes.real, c: dtypes.real, d: dtypes.numeric):
