@@ -19,10 +19,15 @@ def fit_cube(x: dtypes.numeric, a: dtypes.numeric, b: dtypes.numeric, c: dtypes.
     numeric is int, float or complex"""
     return a*x**3+b*x**2+c*x+d
 
-def fit_exp(x: dtypes.real, a: dtypes.numeric, b: dtypes.real, c: dtypes.numeric):
+def fit_exp(x: dtypes.real|dtypes.realArray, a: dtypes.numeric, b: dtypes.real, c: dtypes.numeric):
     """This returns the result of a*e^(x*b)+c and can be used as a function for fitting
      
     numeric is int, float or complex; real is int or float"""
+    if type(x) == list:
+        result = []
+        for _x in x:
+           result.append(a*math.exp(x*b)+c)
+           return result 
     return a*math.exp(x*b)+c
 
 def fit_ln(x: dtypes.real, a: dtypes.numeric, b: dtypes.numeric):
