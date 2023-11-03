@@ -1,7 +1,7 @@
 from yamaplotutil import dtypes
 import math
 
-def fit_lin(x: dtypes.numericArray, m: dtypes.numeric, b: dtypes.numeric) -> dtypes.numeric | dtypes.numericArray:
+def fit_lin(x: dtypes.numeric | dtypes.numericArray, m: dtypes.numeric, b: dtypes.numeric) -> dtypes.numeric | dtypes.numericArray:
     """This returns the result of m*x+b and can be used as a function for fitting
      
     numeric is int, float or complex; numericArray is list of numeric"""
@@ -12,7 +12,7 @@ def fit_lin(x: dtypes.numericArray, m: dtypes.numeric, b: dtypes.numeric) -> dty
         return result
     return m*x+b
 
-def fit_quad(x: dtypes.numericArray, a: dtypes.numeric, b: dtypes.numeric, c: dtypes.numeric) -> dtypes.numeric | dtypes.numericArray:
+def fit_quad(x: dtypes.numeric | dtypes.numericArray, a: dtypes.numeric, b: dtypes.numeric, c: dtypes.numeric) -> dtypes.numeric | dtypes.numericArray:
     """This returns the result of a*x²+b*x+c and can be used as a function for fitting
      
     numeric is int, float or complex; numericArray is list of numeric"""
@@ -23,7 +23,7 @@ def fit_quad(x: dtypes.numericArray, a: dtypes.numeric, b: dtypes.numeric, c: dt
         return result
     return a*x**2+b*x+c
 
-def fit_cube(x: dtypes.numericArray, a: dtypes.numeric, b: dtypes.numeric, c: dtypes.numeric, d: dtypes.numeric) -> dtypes.numeric | dtypes.numericArray:
+def fit_cube(x: dtypes.numeric | dtypes.numericArray, a: dtypes.numeric, b: dtypes.numeric, c: dtypes.numeric, d: dtypes.numeric) -> dtypes.numeric | dtypes.numericArray:
     """This returns the result of a*x³+b*x²+c*x+d and can be used as a function for fitting
      
     numeric is int, float or complex; numericArray is list of numeric"""
