@@ -93,7 +93,7 @@ def test_fit_cube_int():
         x = randInt(__globalMin, __globalMax)
         assert ff.fit_cube(x, a, b, c, d) == a*x**3+b*x**2+c*x+d
 
-def test_fit_quad_int_list():
+def test_fit_cube_int_list():
     for _ in range(__testRuns):
         a = randInt(__globalMin, __globalMax)
         b = randInt(__globalMin, __globalMax)
@@ -131,7 +131,7 @@ def test_fit_exp_int():
         x = randInt(__globalMin, __globalMax)
         assert ff.fit_exp(x, a, b, c) == a*math.exp(x*b)+c
 
-def test_fit_quad_int_list():
+def test_fit_exp_int_list():
     for _ in range(__testRuns):
         a = randInt(__globalMin, __globalMax)
         b = randInt(__globalMin, __globalMax)
@@ -165,7 +165,7 @@ def test_fit_ln_int():
         x = randInt(1, __globalMax)
         assert ff.fit_ln(x, a, b) == a*math.log(x)+b
 
-def test_fit_quad_int_list():
+def test_fit_ln_int_list():
     for _ in range(__testRuns):
         a = randInt(__globalMin, __globalMax)
         b = randInt(__globalMin, __globalMax)
@@ -198,6 +198,18 @@ def test_fit_sin_int():
         x = randInt(__globalMin, __globalMax)
         assert ff.fit_sin(x, a, b, c, d) == a*math.sin(b*x+c)+d
 
+def test_fit_sin_int_list():
+    for _ in range(__testRuns):
+        a = randInt(__globalMin, __globalMax)
+        b = randInt(__globalMin, __globalMax)
+        c = randInt(__globalMin, __globalMax)
+        d = randInt(__globalMin, __globalMax)
+        x = [randInt(__globalMin, __globalMax), randInt(__globalMin, __globalMax)]
+        result = ff.fit_sin(x, a, b, c, d)
+        assert len(result) == len(x)
+        for i in range(len(x)):
+            assert result[i] == a*math.sin(b*x[i]+c)+d
+
 def test_fit_sin_float():
     for _ in range(__testRuns):
         a = randFloat(__globalMin, __globalMax)
@@ -224,6 +236,18 @@ def test_fit_cos_int():
         d = randInt(__globalMin, __globalMax)
         x = randInt(__globalMin, __globalMax)
         assert ff.fit_cos(x, a, b, c, d) == a*math.cos(b*x+c)+d
+
+def test_fit_cos_int_list():
+    for _ in range(__testRuns):
+        a = randInt(__globalMin, __globalMax)
+        b = randInt(__globalMin, __globalMax)
+        c = randInt(__globalMin, __globalMax)
+        d = randInt(__globalMin, __globalMax)
+        x = [randInt(__globalMin, __globalMax), randInt(__globalMin, __globalMax)]
+        result = ff.fit_cos(x, a, b, c, d)
+        assert len(result) == len(x)
+        for i in range(len(x)):
+            assert result[i] == a*math.cos(b*x[i]+c)+d
 
 def test_fit_cos_float():
     for _ in range(__testRuns):
