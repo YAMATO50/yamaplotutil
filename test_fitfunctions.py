@@ -165,6 +165,16 @@ def test_fit_ln_int():
         x = randInt(1, __globalMax)
         assert ff.fit_ln(x, a, b) == a*math.log(x)+b
 
+def test_fit_quad_int_list():
+    for _ in range(__testRuns):
+        a = randInt(__globalMin, __globalMax)
+        b = randInt(__globalMin, __globalMax)
+        x = [randInt(1, __globalMax), randInt(1, __globalMax)]
+        result = ff.fit_ln(x, a, b)
+        assert len(result) == len(x)
+        for i in range(len(x)):
+            assert result[i] == a*math.log(x[i])+b
+
 def test_fit_ln_float():
     for _ in range(__testRuns):
         a = randFloat(__globalMin, __globalMax)
