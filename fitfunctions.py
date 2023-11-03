@@ -4,7 +4,7 @@ import math
 def fit_lin(x: dtypes.numericArray, m: dtypes.numeric, b: dtypes.numeric) -> dtypes.numeric | dtypes.numericArray:
     """This returns the result of m*x+b and can be used as a function for fitting
      
-    numeric is int, float or complex"""
+    numeric is int, float or complex; numericArray is list of numeric"""
     if type(x) == list:
         result = []
         for _x in x:
@@ -15,7 +15,7 @@ def fit_lin(x: dtypes.numericArray, m: dtypes.numeric, b: dtypes.numeric) -> dty
 def fit_quad(x: dtypes.numericArray, a: dtypes.numeric, b: dtypes.numeric, c: dtypes.numeric) -> dtypes.numeric | dtypes.numericArray:
     """This returns the result of a*x²+b*x+c and can be used as a function for fitting
      
-    numeric is int, float or complex"""
+    numeric is int, float or complex; numericArray is list of numeric"""
     if type(x) == list:
         result = []
         for _x in x:
@@ -26,7 +26,7 @@ def fit_quad(x: dtypes.numericArray, a: dtypes.numeric, b: dtypes.numeric, c: dt
 def fit_cube(x: dtypes.numericArray, a: dtypes.numeric, b: dtypes.numeric, c: dtypes.numeric, d: dtypes.numeric) -> dtypes.numeric | dtypes.numericArray:
     """This returns the result of a*x³+b*x²+c*x+d and can be used as a function for fitting
      
-    numeric is int, float or complex"""
+    numeric is int, float or complex; numericArray is list of numeric"""
     if type(x) == list:
         result = []
         for _x in x:
@@ -37,7 +37,7 @@ def fit_cube(x: dtypes.numericArray, a: dtypes.numeric, b: dtypes.numeric, c: dt
 def fit_exp(x: dtypes.real|dtypes.realArray, a: dtypes.numeric, b: dtypes.real, c: dtypes.numeric) -> dtypes.real | dtypes.realArray:
     """This returns the result of a*e^(x*b)+c and can be used as a function for fitting
      
-    numeric is int, float or complex; real is int or float"""
+    numeric is int, float or complex; real is int or float; realArray is list of real"""
     if type(x) == list:
         result = []
         for _x in x:
@@ -48,7 +48,7 @@ def fit_exp(x: dtypes.real|dtypes.realArray, a: dtypes.numeric, b: dtypes.real, 
 def fit_ln(x: dtypes.real|dtypes.realArray, a: dtypes.numeric, b: dtypes.numeric) -> dtypes.real | dtypes.realArray:
     """This returns the result of a*ln(x)+b and can be used as a function for fitting
      
-    numeric is int, float or complex; real is int or float"""
+    numeric is int, float or complex; real is int or float; realArray is list of real"""
     if type(x) == list:
         result = []
         for _x in x:
@@ -59,7 +59,7 @@ def fit_ln(x: dtypes.real|dtypes.realArray, a: dtypes.numeric, b: dtypes.numeric
 def fit_sin(x: dtypes.real | dtypes.realArray, a: dtypes.numeric, b: dtypes.real, c: dtypes.real, d: dtypes.numeric) -> dtypes.real | dtypes.realArray:
     """This returns the result of a*sin(b*x+c)+d and can be used as a function for fitting
      
-    numeric is int, float or complex; real is int or float"""
+    numeric is int, float or complex; real is int or float; realArray is list of real"""
     if type(x) == list:
         result = []
         for _x in x:
@@ -70,7 +70,7 @@ def fit_sin(x: dtypes.real | dtypes.realArray, a: dtypes.numeric, b: dtypes.real
 def fit_cos(x: dtypes.real | dtypes.realArray, a: dtypes.numeric, b: dtypes.real, c: dtypes.real, d: dtypes.numeric) -> dtypes.real | dtypes.realArray:
     """This returns the result of a*cos(b*x+c)+d and can be used as a function for fitting
      
-    numeric is int, float or complex; real is int or float"""
+    numeric is int, float or complex; real is int or float; realArray is list of real"""
     if type(x) == list:
         result = []
         for _x in x:
