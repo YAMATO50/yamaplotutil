@@ -5,6 +5,11 @@ def fit_lin(x: dtypes.numeric, m: dtypes.numeric, b: dtypes.numeric):
     """This returns the result of m*x+b and can be used as a function for fitting
      
     numeric is int, float or complex"""
+    if type(x) == list:
+        result = []
+        for _x in x:
+            result.append(m*_x+b)
+        return result
     return m*x+b
 
 def fit_quad(x: dtypes.numeric, a: dtypes.numeric, b: dtypes.numeric, c: dtypes.numeric):
@@ -27,7 +32,7 @@ def fit_exp(x: dtypes.real|dtypes.realArray, a: dtypes.numeric, b: dtypes.real, 
         result = []
         for _x in x:
            result.append(a*math.exp(_x*b)+c)
-           return result 
+        return result 
     return a*math.exp(x*b)+c
 
 def fit_ln(x: dtypes.real|dtypes.realArray, a: dtypes.numeric, b: dtypes.numeric):
@@ -38,7 +43,7 @@ def fit_ln(x: dtypes.real|dtypes.realArray, a: dtypes.numeric, b: dtypes.numeric
         result = []
         for _x in x:
             result.append(a*math.log(_x)+b)
-            return result
+        return result
     return a*math.log(x)+b
 
 def fit_sin(x: dtypes.real | dtypes.realArray, a: dtypes.numeric, b: dtypes.real, c: dtypes.real, d: dtypes.numeric):
@@ -49,7 +54,7 @@ def fit_sin(x: dtypes.real | dtypes.realArray, a: dtypes.numeric, b: dtypes.real
         result = []
         for _x in x:
             result.append(a*math.sin(b*_x+c)+d)
-            return result
+        return result
     return a*math.sin(b*x+c)+d
 
 def fit_cos(x: dtypes.real | dtypes.realArray, a: dtypes.numeric, b: dtypes.real, c: dtypes.real, d: dtypes.numeric):
@@ -60,5 +65,5 @@ def fit_cos(x: dtypes.real | dtypes.realArray, a: dtypes.numeric, b: dtypes.real
         result = []
         for _x in x:
             result.append(a*math.cos(b*_x+c)+d)
-            return result
+        return result
     return a*math.cos(b*x+c)+d
