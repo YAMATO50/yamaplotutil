@@ -24,6 +24,17 @@ def test_fit_lin_int():
         x = randInt(__globalMin, __globalMax)
         assert ff.fit_lin(x, m, b) == m*x+b
 
+def test_fit_lin_int_list():
+    for _ in range(__testRuns):
+        m = randInt(__globalMin, __globalMax)
+        b = randInt(__globalMin, __globalMax)
+        x = [randInt(__globalMin, __globalMax), randInt(__globalMin, __globalMax)]
+        result = ff.fit_lin(x, m, b)
+        assert len(result) == len(x)
+        for i in range(len(x)):
+            assert result[i] == m*x[i]+b
+
+
 def test_fit_lin_float():
     for _ in range(__testRuns):
         m = randFloat(__globalMin, __globalMax)
