@@ -57,6 +57,17 @@ def test_fit_quad_int():
         x = randInt(__globalMin, __globalMax)
         assert ff.fit_quad(x, a, b, c) == a*x**2+b*x+c
 
+def test_fit_quad_int_list():
+    for _ in range(__testRuns):
+        a = randInt(__globalMin, __globalMax)
+        b = randInt(__globalMin, __globalMax)
+        c = randInt(__globalMin, __globalMax)
+        x = [randInt(__globalMin, __globalMax), randInt(__globalMin, __globalMax)]
+        result = ff.fit_quad(x, a, b, c)
+        assert len(result) == len(x)
+        for i in range(len(x)):
+            assert result[i] == a*x[i]**2+b*x[i]+c
+
 def test_fit_quad_float():
     for _ in range(__testRuns):
         a = randFloat(__globalMin, __globalMax)
