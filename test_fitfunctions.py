@@ -131,6 +131,17 @@ def test_fit_exp_int():
         x = randInt(__globalMin, __globalMax)
         assert ff.fit_exp(x, a, b, c) == a*math.exp(x*b)+c
 
+def test_fit_quad_int_list():
+    for _ in range(__testRuns):
+        a = randInt(__globalMin, __globalMax)
+        b = randInt(__globalMin, __globalMax)
+        c = randInt(__globalMin, __globalMax)
+        x = [randInt(__globalMin, __globalMax), randInt(__globalMin, __globalMax)]
+        result = ff.fit_exp(x, a, b, c)
+        assert len(result) == len(x)
+        for i in range(len(x)):
+            assert result[i] == a*math.exp(x[i]*b)+c
+
 def test_fit_exp_float():
     for _ in range(__testRuns):
         a = randFloat(__globalMin, __globalMax)
