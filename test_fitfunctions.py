@@ -93,6 +93,18 @@ def test_fit_cube_int():
         x = randInt(__globalMin, __globalMax)
         assert ff.fit_cube(x, a, b, c, d) == a*x**3+b*x**2+c*x+d
 
+def test_fit_quad_int_list():
+    for _ in range(__testRuns):
+        a = randInt(__globalMin, __globalMax)
+        b = randInt(__globalMin, __globalMax)
+        c = randInt(__globalMin, __globalMax)
+        d = randInt(__globalMin, __globalMax)
+        x = [randInt(__globalMin, __globalMax), randInt(__globalMin, __globalMax)]
+        result = ff.fit_cube(x, a, b, c, d)
+        assert len(result) == len(x)
+        for i in range(len(x)):
+            assert result[i] == a*x[i]**3+b*x[i]**2+c*x[i]+d
+
 def test_fit_cube_float():
     for _ in range(__testRuns):
         a = randFloat(__globalMin, __globalMax)
