@@ -16,6 +16,11 @@ def fit_quad(x: dtypes.numeric, a: dtypes.numeric, b: dtypes.numeric, c: dtypes.
     """This returns the result of a*x²+b*x+c and can be used as a function for fitting
      
     numeric is int, float or complex"""
+    if type(x) == list:
+        result = []
+        for _x in x:
+            result.append(a*_x**2+b*_x+c)
+        return result
     return a*x**2+b*x+c
 
 def fit_cube(x: dtypes.numeric, a: dtypes.numeric, b: dtypes.numeric, c: dtypes.numeric, d: dtypes.numeric):
